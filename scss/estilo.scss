@@ -2,12 +2,15 @@
 
 $texto1: #ea5774;
 $texto2:#f5a5c4;
-$bgcolor: azure;
+$bgcolor2: azure;
+$bgcolor1:#e7fbbe;
+$bgcolor3: white;
+$bgcolor4: #aaebf7;
+$bgcolor5: #aca8f1;
 
 /*mixin estilo*/
 
-@mixin estiloTitulo($bg, $color){ 
-    background-color: $bg;
+@mixin estiloTitulo($color){ 
     color: $color;
     border-radius: 10px;
     padding: 1rem;
@@ -17,124 +20,27 @@ $bgcolor: azure;
 
 /*get-map*/
 
-$encabezados:(
-    xl:#f5a5c4,
-    l:#ea5774,
+$letras:(
+    xl:#ea5774,
+    l:#f5a5c4,
     m: #4996cd,
-    s: #514dd1
+    s: #a29ee8,
 );
 
-$xl: map-get($encabezados, xl);
-$l: map-get($encabezados, l);
-$m: map-get($encabezados, m);
-$s: map-get($encabezados, s);
+$xl: map-get($letras, xl);
+$l: map-get($letras, l);
+$m: map-get($letras, m);
+$s: map-get($letras, s);
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import "main";
+@import "header";
+@import "nav";
+@import "body";
+@import "footer";
 
-.container{
-    h1{
-    text-align: center;
-    font-family: 'Shadows Into Light', cursive;
-    color: $xl; 
-    font-size: 80px;
-    padding: 30px;
-    }
-}
 
-.navbar{
-    background-color: #c0f4aa;
-    width: 100%;
-    margin: 10px auto;
-    padding: 5px;
-    .navbar-nav{
-        list-style-type: none;
-        padding: none;
-        display: flex;
-        justify-content: space-between;
-        .nav-item{
-            padding: 5px;
-            margin: 10px;
-            .nav-link{
-                text-decoration: none;
-                color: $l;
-                font-size: 1.3rem;
-                &:hover{
-                    color: $m;
-                }
-            }
-        }
-    }
-}
 
-main{
-    h2{
-    @include estiloTitulo($bgcolor,$texto1);
-    }
-    p{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 15px;
-        padding: 5px;
-        color: $m;
-        text-align: justify;
-    }
-    h3{
-        @include estiloTitulo($bgcolor,$texto2);
-    }
-    .lista{
-        list-style-type: none;
-        padding: 5px;
-        .listaItem{
-            margin: 20px;
-            color: $m;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 1rem;
-        }
-    }
-    .tabla{
-        margin: 50px 150px 150px 180px;
-        background-color:#99dae5;
-        text-align: justify;
-        width: 70%;
-        th{
-            color:$s;
-            padding: 8px;
-            font-family: 'PT Sans', sans-serif;
-        }
-        td{
-            @extend th 
-        }
-    }
-}
 
-footer{
-    background-color: #c0f4aa;
-    width: 100%;
-    margin: 10px auto;
-    padding: 50px;
-    .redes{
-        list-style-type: none;
-        padding: none;
-        justify-content: center;
-        .listaRedes{
-            padding: 5px;
-            margin: 10px;
-            .redesLink{
-                text-decoration: none;
-                color: $l;
-                font-size: 1rem;
-                &:hover{
-                    color: $m;
-                }
-            }
-        }
-    }
-}
 
 
 
